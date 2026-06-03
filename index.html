@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>위올마케팅 | WeAllMarketing</title>
+<meta name="description" content="위올마케팅은 온라인 인테리어 컨설팅과 디지털 마케팅 전문 기업입니다.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; color: #111; background: #fff; }
+
+  /* 네비 */
+  nav {
+    position: fixed; top: 0; width: 100%; background: #fff;
+    border-bottom: 1px solid #eee; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 60px; height: 64px;
+  }
+  .logo { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; color: #111; text-decoration: none; }
+  .logo span { color: #3b5bdb; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-size: 14px; color: #555; text-decoration: none; }
+  .nav-links a:hover { color: #3b5bdb; }
+
+  /* 히어로 */
+  .hero {
+    padding: 160px 60px 100px;
+    background: linear-gradient(135deg, #f0f4ff 0%, #fff 60%);
+    min-height: 100vh; display: flex; align-items: center;
+  }
+  .hero-inner { max-width: 680px; }
+  .hero-tag {
+    display: inline-block; background: #e8edff; color: #3b5bdb;
+    font-size: 12px; font-weight: 700; padding: 6px 14px;
+    border-radius: 20px; letter-spacing: 1px; margin-bottom: 24px;
+  }
+  .hero h1 { font-size: 52px; font-weight: 900; line-height: 1.15; letter-spacing: -1px; margin-bottom: 20px; }
+  .hero h1 em { color: #3b5bdb; font-style: normal; }
+  .hero p { font-size: 18px; color: #555; line-height: 1.7; margin-bottom: 36px; }
+  .btn-primary {
+    display: inline-block; background: #3b5bdb; color: #fff;
+    padding: 14px 32px; border-radius: 8px; font-size: 15px;
+    font-weight: 700; text-decoration: none; transition: background .2s;
+  }
+  .btn-primary:hover { background: #2f4bc7; }
+
+  /* 섹션 공통 */
+  section { padding: 100px 60px; }
+  .section-tag { font-size: 12px; font-weight: 700; color: #3b5bdb; letter-spacing: 2px; margin-bottom: 12px; }
+  .section-title { font-size: 36px; font-weight: 900; margin-bottom: 16px; letter-spacing: -0.5px; }
+  .section-sub { font-size: 16px; color: #666; line-height: 1.7; max-width: 560px; }
+
+  /* 서비스 */
+  .services { background: #f8f9ff; }
+  .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+  .service-card {
+    background: #fff; padding: 36px 28px; border-radius: 16px;
+    border: 1px solid #e8edff; transition: box-shadow .2s;
+  }
+  .service-card:hover { box-shadow: 0 8px 32px rgba(59,91,219,.1); }
+  .service-icon { font-size: 36px; margin-bottom: 16px; }
+  .service-name { font-size: 18px; font-weight: 800; margin-bottom: 10px; }
+  .service-desc { font-size: 14px; color: #666; line-height: 1.7; }
+
+  /* 소개 */
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .stat { padding: 24px; background: #f0f4ff; border-radius: 12px; }
+  .stat-num { font-size: 36px; font-weight: 900; color: #3b5bdb; }
+  .stat-label { font-size: 13px; color: #666; margin-top: 4px; }
+  .about-img {
+    background: linear-gradient(135deg, #3b5bdb, #7048e8);
+    border-radius: 24px; height: 400px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 64px;
+  }
+
+  /* 연락처 */
+  .contact { background: #111; color: #fff; }
+  .contact .section-tag { color: #7c9dff; }
+  .contact .section-title { color: #fff; }
+  .contact .section-sub { color: #aaa; }
+  .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
+  .contact-item { padding: 28px; background: #1a1a1a; border-radius: 12px; }
+  .contact-label { font-size: 12px; color: #666; letter-spacing: 1px; margin-bottom: 8px; }
+  .contact-value { font-size: 15px; color: #ddd; line-height: 1.6; }
+
+  /* 푸터 */
+  footer {
+    background: #0a0a0a; color: #555; font-size: 13px;
+    padding: 28px 60px; display: flex; justify-content: space-between; align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 120px 24px 80px; }
+    .hero h1 { font-size: 32px; }
+    section { padding: 60px 24px; }
+    .service-grid { grid-template-columns: 1fr; }
+    .about-inner { grid-template-columns: 1fr; }
+    .about-img { height: 200px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">위올<span>마케팅</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">서비스</a></li>
+    <li><a href="#about">회사 소개</a></li>
+    <li><a href="#contact">연락처</a></li>
+  </ul>
+</nav>
+
+<!-- 히어로 -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">WeAllMarketing</div>
+    <h1>공간과 브랜드를<br><em>하나로 연결</em>합니다</h1>
+    <p>위올마케팅은 온라인 인테리어 컨설팅과 디지털 마케팅을 결합한 토탈 마케팅 솔루션을 제공합니다. 브랜드의 공간부터 온라인 존재감까지, 모든 마케팅을 함께 만들어갑니다.</p>
+    <a href="#contact" class="btn-primary">문의하기</a>
+  </div>
+</section>
+
+<!-- 서비스 -->
+<section class="services" id="services">
+  <div class="section-tag">SERVICES</div>
+  <div class="section-title">제공 서비스</div>
+  <div class="section-sub">공간 디자인부터 디지털 마케팅까지, 브랜드 성장에 필요한 모든 것을 제공합니다.</div>
+  <div class="service-grid">
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <div class="service-name">온라인 인테리어 컨설팅</div>
+      <div class="service-desc">공간의 가치를 높이는 인테리어 기획 및 온라인 시뮬레이션. 비용 대비 최적의 인테리어 방향을 제안합니다.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <div class="service-name">디지털 마케팅</div>
+      <div class="service-desc">SNS, 검색 광고, 콘텐츠 마케팅을 통한 온라인 브랜드 구축. 타겟 고객에게 정확하게 도달합니다.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎯</div>
+      <div class="service-name">브랜드 전략</div>
+      <div class="service-desc">브랜드 아이덴티티 수립부터 통합 마케팅 전략까지. 일관된 브랜드 메시지로 신뢰를 쌓습니다.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <div class="service-name">퍼포먼스 마케팅</div>
+      <div class="service-desc">데이터 기반의 광고 집행과 성과 분석. 명확한 ROI를 추구하는 마케팅을 실행합니다.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✏️</div>
+      <div class="service-name">콘텐츠 제작</div>
+      <div class="service-desc">영상, 이미지, 카피라이팅 등 브랜드 스토리를 전달하는 고품질 콘텐츠를 제작합니다.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💻</div>
+      <div class="service-name">앱·웹 솔루션</div>
+      <div class="service-desc">비즈니스 목표에 맞는 모바일 앱 및 웹사이트 개발로 디지털 접점을 강화합니다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 회사 소개 -->
+<section id="about">
+  <div class="about-inner">
+    <div>
+      <div class="section-tag">ABOUT US</div>
+      <div class="section-title">위올마케팅 소개</div>
+      <p style="font-size:16px;color:#555;line-height:1.8;margin-top:16px">
+        위올마케팅(WeAllMarketing)은 온라인 인테리어와 디지털 마케팅의 경계를 허물고, 브랜드의 물리적 공간과 온라인 존재감을 하나로 연결하는 토탈 마케팅 에이전시입니다.
+      </p>
+      <p style="font-size:16px;color:#555;line-height:1.8;margin-top:16px">
+        고객의 브랜드가 공간에서, 화면에서, 그리고 사람들의 기억 속에서 일관되게 살아있도록 — 모든 마케팅을 함께 만들어갑니다.
+      </p>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-num">All-in</div>
+          <div class="stat-label">토탈 마케팅 솔루션</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">온·오프</div>
+          <div class="stat-label">통합 브랜딩 전략</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-img">🏢</div>
+  </div>
+</section>
+
+<!-- 연락처 -->
+<section class="contact" id="contact">
+  <div class="section-tag">CONTACT</div>
+  <div class="section-title">연락처</div>
+  <div class="section-sub">문의사항이 있으시면 언제든지 연락 주세요.</div>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-label">COMPANY</div>
+      <div class="contact-value">위올마케팅<br>WeAllMarketing</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">ADDRESS</div>
+      <div class="contact-value">경기도 안성시 양성면<br>이현배티길 58-42</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">CONTACT</div>
+      <div class="contact-value">+82 10-4132-9456</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 위올마케팅 (WeAllMarketing). All rights reserved.</span>
+  <span>경기도 안성시 양성면 이현배티길 58-42</span>
+</footer>
+
+</body>
+</html>
